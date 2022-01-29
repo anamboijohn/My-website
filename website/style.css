@@ -1,0 +1,91 @@
+body{
+    background-image: url("./plane1.jpg");
+    background-size: cover;
+    background-size: center;
+    background-repeat: no-repeat;
+}
+.nbc{
+    background-color: skyblue;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid blue;
+    width: 90vw;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+li{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.btn1{
+    position: relative;
+  background: orangered;
+  border: none;
+  color: white;
+  padding: 15px 24px;
+  font-size: 1.4rem;
+  box-shadow: -6px 6px 0 hsl(16, 100%, 30%);
+  outline: none;
+}
+.btn1:hover{
+    background: hsl(16, 100%, 45%);
+}
+.btn1:active{
+    background: hsl(16, 100%, 40%);
+    top: 3px;
+    left: -3px;
+    box-shadow: -3px 3px 0 hsl(16, 100%, 30%);
+}
+.btn1::before{
+    position: absolute;
+    display: block;
+    content: "";
+    height: 0;
+    width: 0;
+    /* border width needs to be size of the element's box shadow */
+    border: solid 6px transparent;
+
+    /* border width needs to be size of the element's box shadow */
+    border-right: solid 6px hsl(16, 100%, 30%);
+
+    /* no width for left, makes measurements easier */
+    border-left-width: 0px;
+
+    background: none;
+    top: 0px;
+
+    /* needs to be the same size as border width */
+    left: -6px;
+}
+.btn1::after{
+    position: absolute;
+    display: block;
+    content: "";
+    height: 0;
+    width: 0;
+    border: solid 6px transparent;
+    border-top: solid 6px hsl(16, 100%, 30%);
+    border-bottom-width: 0px;
+    background: none;
+    right: 0;
+    bottom: -6px;
+}
+.btn1::before {
+    border: solid 3px transparent;
+    border-right: solid 3px hsl(16, 100%, 30%);
+    border-left-width: 0px;
+    left: -3px;
+  }
+
+  .btn1:active::after {
+    border: solid 3px transparent;
+    border-top: solid 3px hsl(16, 100%, 30%);
+    border-bottom-width: 0px;
+    bottom: -3px;
+  }
